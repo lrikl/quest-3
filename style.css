@@ -1,5 +1,4 @@
-
-    :root {
+   :root {
     
     --rz-b-color: #000;
     --rz-w-color: #fff;
@@ -44,8 +43,7 @@
 }
 
 .rz-wrap-video video {
-    width: clamp(304px, 56vw, 800px);
-    margin: 0 auto;
+    width: clamp(304px, 100vw, 1536px);
 }
 
 .rz-m-b-8 {
@@ -104,11 +102,11 @@
 
 
 .rz-h2 {
-    font-size: var(--rz-clamp32-48);
+    font-size: clamp(24px, 4vw, 48px);
 }
 
 .rz-h3 {
-    font-size: var(--rz-clamp24-40);
+    font-size: var(--rz-clamp16-40);
 }
 
 .rz-h4 {
@@ -119,8 +117,12 @@
     position: absolute;
     color: var(--rz-w-color);
 
-    top: 60%;
-    left: 25%;
+    top: 65%;
+    left: 2%;
+
+    background-color: rgb(255, 255, 255, 0.3);
+    border-radius: 10px;
+    padding: 12px;
 }
 
 .rz-b-wrap {
@@ -675,9 +677,12 @@
     }
 
     .rz-pos-text1, .rz-pos-text2 {
-        top: 45%;
-        left: 5%;
+        top: 40%;
         font-size: 12px;
+    }
+
+    .rz-pos-text2 {
+        top: 55%;
     }
 
     .rz-button-decor:hover .rz-link-text {
