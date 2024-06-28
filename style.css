@@ -115,7 +115,7 @@
 
 .rz-pos-text1, .rz-pos-text2 {
     position: absolute;
-    color: var(--rz-w-color);
+    color: var(--rz-b-color);
 
     top: 65%;
     left: 2%;
