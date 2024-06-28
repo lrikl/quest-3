@@ -685,7 +685,7 @@
         top: 55%;
     }
 
-    .rz-button-decor:hover .rz-link-text {
+    .rz-link-text {
         display: none;
     }
 
