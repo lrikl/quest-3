@@ -1,0 +1,771 @@
+
+    :root {
+    
+    --rz-b-color: #000;
+    --rz-w-color: #fff;
+
+    --rz-clamp32-48: clamp(32px, 4vw, 48px);
+    
+    --rz-clamp24-40: clamp(24px, 4vw, 40px);
+    
+    --rz-clamp16-40: clamp(16px, 4vw, 40px);
+    --rz-clamp16-24: clamp(16px, 2vw, 24px);
+
+    --rz-clamp8-16: clamp(8px, 1vw, 16px);
+    
+}
+
+.rz-container-rich * {
+    box-sizing: border-box;
+}
+
+.rz-container-rich {
+    color-scheme: only light;
+    
+    max-width: 1536px;
+    overflow: hidden;
+    display: block;
+    margin: 0 auto;
+    
+    font-size: clamp(16px, 2vw, 20px);
+    line-height: 1.2;
+    font-family: Rozetka, Arial, Helvetica, FreeSans, "Liberation Sans", "Nimbus Sans L", sans-serif;
+    
+    color: #474A51;
+    background: var(--rz-w-color);
+}
+
+.rz-wrap-img img, .rz-wrap-video video {
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    max-height: 100%;
+    display: block;
+}
+
+.rz-wrap-video video {
+    width: clamp(304px, 56vw, 800px);
+    margin: 0 auto;
+}
+
+.rz-m-b-8 {
+    margin-bottom: 8px;
+}
+.rz-m-b-16{
+    margin-bottom: var(--rz-clamp8-16);
+}
+.rz-m-b-24{
+    margin-bottom: var(--rz-clamp16-24);
+}
+.rz-m-b-32{
+    margin-bottom: var(--rz-clamp16-32);
+}
+.rz-m-b-40{
+    margin-bottom: var(--rz-clamp16-40);
+}
+
+.rz-black {
+    color: var(--rz-b-color);
+}
+
+.rz-t-cen {
+    text-align: center;
+}
+
+.rz-upper {
+    text-transform: uppercase;
+}
+
+.rz-f-b {
+    font-weight: bold;
+}
+
+.rz-relative {
+    position: relative;
+}
+
+.rz-flex-shr-0 {
+    flex-shrink: 0;
+}
+
+.rz-mrg-auto {
+    margin: 0 auto;
+}
+
+.rz-d-flex {
+    display: flex;
+    flex-direction: row;
+}
+
+.rz-d-flex-col {
+    display: flex;
+    flex-direction: column;
+}
+
+
+.rz-h2 {
+    font-size: var(--rz-clamp32-48);
+}
+
+.rz-h3 {
+    font-size: var(--rz-clamp24-40);
+}
+
+.rz-h4 {
+    font-size: var(--rz-clamp16-24);
+}
+
+.rz-pos-text1, .rz-pos-text2 {
+    position: absolute;
+    color: var(--rz-w-color);
+
+    top: 60%;
+    left: 25%;
+}
+
+.rz-b-wrap {
+    background: url("https://content2.rozetka.com.ua/files/images/original/446757547.jpg") no-repeat center/cover;
+    height: clamp(344px, 48vw, 720px);
+    align-items: center;
+    justify-content: center;
+}
+
+.rz-b-text {
+    width: clamp(264px, 32vw, 440px);
+}
+
+
+.rz-x {
+    padding: var(--rz-clamp8-16);
+}
+
+
+/* slider */
+
+
+#rz-slider, #rz-slider2 {
+    width: 100%;
+    margin: var(--rz-clamp16-40) auto var(--rz-clamp16-32);
+    max-width: 1536px;
+    margin: 0 auto;
+    position: relative;
+}
+
+#rz-slider input[type='radio'], #rz-slider2 input[type='radio'] {
+    display: none;
+}
+
+#rz-slider label, #rz-slider2 label {
+    cursor: pointer;
+}
+
+#rz-slides, #rz-slides2 {
+    background: var(--rz-w-color);
+    position: relative;
+    z-index: 1;
+}
+
+
+#rz-overflow {
+    width: 100%;
+    overflow: hidden;
+    background: url("https://content.rozetka.com.ua/files/images/original/446653214.webp") no-repeat center/cover;
+}
+
+#rz-slide1:checked~#rz-slides .rz-inner {
+    margin-left: 0;
+}
+
+#rz-slide2:checked~#rz-slides .rz-inner {
+    margin-left: -100%;
+}
+
+#rz-slide3:checked~#rz-slides .rz-inner {
+    margin-left: -200%;
+}
+
+#rz-slide4:checked~#rz-slides .rz-inner {
+    margin-left: -300%;
+}
+
+#rz-slides .rz-inner {
+    transition: margin-left 800ms cubic-bezier(0.770, 0.000, 0.175, 1.000);
+    width: 400%;
+}
+
+#rz-slides .rz-slide {
+    width: 25%;
+    float: left;
+    display: block;
+    color: var(--rz-w-color)
+}
+
+#rz-controls {
+    width: 20%;
+    height: 55px;
+    z-index: 3;
+    bottom: 5%;
+    position: absolute;
+    right:  40%;
+}
+
+#rz-controls label {
+    display: none;
+    width: clamp(20px, 3vw, 40px);
+    height: clamp(20px, 3vw, 40px);
+    opacity: 0.8;
+    transition: opacity 0.2s ease-out;
+    border-radius: 50%;
+}
+
+#rz-controls label:hover {
+    opacity: 1;
+}
+
+#rz-slide1:checked~#rz-controls label:nth-child(2),
+#rz-slide2:checked~#rz-controls label:nth-child(3),
+#rz-slide3:checked~#rz-controls label:nth-child(4),
+#rz-slide4:checked~#rz-controls label:nth-child(1) {
+    background: url("https://content2.rozetka.com.ua/files/images/original/446728986.png") no-repeat;
+    background-size: cover;
+    float: right;
+    margin: 0 4px 0 0;
+    display: block;
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+#rz-slide1:checked~#rz-controls label:nth-last-child(1),
+#rz-slide2:checked~#rz-controls label:nth-last-child(4),
+#rz-slide3:checked~#rz-controls label:nth-last-child(3),
+#rz-slide4:checked~#rz-controls label:nth-last-child(2) {
+    background: url("https://content2.rozetka.com.ua/files/images/original/446728986.png") no-repeat;
+    background-size: cover;
+    float: left;
+    transform: rotate(180deg);
+    margin: 0 0 0 4px;
+    display: block;
+    background-color: rgba(255, 255, 255, 0.8);
+    
+}
+
+#rz-bullets {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    position: absolute;
+    left: 0;
+    right: 0;
+    gap: 8px;
+    bottom: 6%;
+    z-index: 3;
+}
+
+#rz-bullets label {
+    width: 12px;
+    height: 12px;
+    cursor: pointer;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.3);
+    transition: 0.2s ease-out;
+}
+
+#rz-slide1:checked~#rz-bullets label:nth-child(1),
+#rz-slide2:checked~#rz-bullets label:nth-child(2),
+#rz-slide3:checked~#rz-bullets label:nth-child(3),
+#rz-slide4:checked~#rz-bullets label:nth-child(4) {
+    background: rgba(36, 136, 255, 1);
+}
+
+#rz-slide1~#rz-bullets label:nth-child(1):hover,
+#rz-slide2~#rz-bullets label:nth-child(2):hover,
+#rz-slide3~#rz-bullets label:nth-child(3):hover,
+#rz-slide4~#rz-bullets label:nth-child(4):hover {
+    background: rgba(36, 136, 255, 0.8);
+}
+
+.rz-slide {
+    position: relative;
+}
+
+.rz-bg-slide img {
+    max-width: 800px;
+    width: 100%;
+}
+
+/* slider end */
+
+/* popup*/
+.rz-popup {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.8);
+    top: 0;
+    left: 0;
+    z-index: 100;
+    opacity: 0;
+    visibility: hidden;
+    overflow-y: scroll;
+    overflow-x: hidden;
+
+    transition: ease-in-out 0.3s;
+}
+
+.rz-popup::-webkit-scrollbar {
+    width: 0;
+}
+
+.rz-popup:target {
+    opacity: 1;
+    visibility: visible;
+}
+
+.rz-popup-area {
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+}
+
+.rz-popup-body {
+    min-height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+
+}
+
+.rz-popup-content {
+    background-color: var(--rz-w-color);
+    max-width: 1200px;
+    width: 100%;
+    padding: 16px;
+    position: relative;
+    background: url("https://content.rozetka.com.ua/files/images/original/446653214.webp") no-repeat center/cover;
+}
+
+.rz-popup-close {
+    position: absolute; 
+    top: 10px;
+    right: 10px;
+    font-size: 0;
+}
+
+
+.rz-button-decor {
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 50px;
+
+}
+
+.rz-wrap-icon {
+    height: 80px;
+    width: 80px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    justify-content: center;
+    align-items: center;
+    
+    animation: blink 1s linear infinite;
+}
+
+@keyframes blink {
+    50% {
+        background-color: rgba(255, 255, 255, 0.8);
+    }
+  }
+
+.rz-wrap-icon img {
+    background-color: var(--rz-w-color);
+    padding: 8px;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: block;
+}
+
+.rz-container-rich a {
+    text-decoration: none;
+    color: #474A51;
+}
+
+.rz-link-text  {
+    display: block;
+    font-weight: 600;
+    max-width: 0;
+    overflow: hidden;
+    transition: max-width 0.3s ease;
+}
+
+
+.rz-button-decor:hover {
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+.rz-button-decor:hover  .rz-wrap-icon{
+    animation: none;
+    background-color: rgba(36, 136, 255, 0.1);
+
+}
+
+.rz-button-decor:hover .rz-link-text {
+    max-width: 800px;
+    padding: 0 16px;
+    
+}
+
+.rz-popup-card {
+    justify-content: center;
+    align-items: center;
+    gap: var(--rz-clamp16-24);
+}
+
+.rz-popup-text, .rz-popup-img {
+    width: 48%;
+}
+
+.rz-popup-title {
+    font-size: var(--rz-clamp24-40);
+}
+
+.rz-remark {
+    font-size: 14px;
+}
+
+.rz-bl-1, .rz-bl-2, .rz-bl-3, .rz-bl-4, .rz-bl-5, .rz-bl-6, .rz-bl-7, .rz-bl-8 {
+    position: absolute;
+}
+
+.rz-bl-1 {
+    top: 40%;
+    right: 60%;
+}
+
+.rz-bl-2 {
+    top: 55%;
+    right: 37%;
+}
+
+.rz-bl-3 {
+    top: 35%;
+    right: 60%;
+}
+
+.rz-bl-4 {
+    top: 30%;
+    right: 35%;
+}
+
+.rz-bl-5 {
+    top: 17%;
+    right: 60%;
+}
+
+.rz-bl-6 {
+    top: 70%;
+    right: 45%;
+}
+
+.rz-bl-7 {
+    top: 10%;
+    right: 45%;
+}
+
+.rz-bl-8 {
+    top: 80%;
+    right: 50%;
+}
+/* popup end */
+
+/* slide 2 */
+
+#rz-overflow2 {
+    width: 100%;
+    overflow: hidden;
+}
+
+
+#rz-slide5:checked~#rz-slides2 .rz-inner2 {
+    margin-left: 0;
+}
+
+#rz-slide6:checked~#rz-slides2 .rz-inner2 {
+    margin-left: -30%;
+}
+
+#rz-slide7:checked~#rz-slides2 .rz-inner2 {
+    margin-left: -60%;
+}
+
+#rz-slide8:checked~#rz-slides2 .rz-inner2 {
+    margin-left: -90%;
+}
+
+#rz-slide9:checked~#rz-slides2 .rz-inner2 {
+    margin-left: -120%;
+}
+
+#rz-slides2 .rz-inner2 {
+    transition: margin-left 800ms cubic-bezier(0.770, 0.000, 0.175, 1.000);
+    width: 400%;
+}
+
+#rz-slides2 .rz-slide {
+    width: 11%;
+    float: left;
+    display: block;
+    padding: 8px;
+    border: 1px solid #DCDCDC;
+    border-right: none;
+}
+
+#rz-slides2 .rz-slide:last-child {
+    border-right: 1px solid #DCDCDC;
+}
+
+.rz-slide-content2 {
+    padding: 10px;
+}
+
+#rz-controls2 {
+    margin: 0 0 0 0;
+    width: 100%;
+    height: 55px;
+    z-index: 3;
+    top: 50%;
+    transform: translateY(-50%);
+    position: absolute;
+}
+
+#rz-controls2 label {
+    transition: opacity 0.2s ease-out;
+    display: none;
+    width: clamp(24px, 4vw, 40px);
+    height: clamp(24px, 4vw, 40px);
+    border-radius: 50%;
+}
+
+
+#rz-slide5:checked~#rz-controls2 label:nth-child(2),
+#rz-slide6:checked~#rz-controls2 label:nth-child(3),
+#rz-slide7:checked~#rz-controls2 label:nth-child(4),
+#rz-slide8:checked~#rz-controls2 label:nth-child(5),
+#rz-slide9:checked~#rz-controls2 label:nth-child(1) {
+    background: url("https://content2.rozetka.com.ua/files/images/original/438678035.png") no-repeat;
+    background-size: contain;
+    float: right;
+    margin: 0 12px 0 0;
+    display: block;
+    background-color: rgba(255, 255, 255, 0.6);
+}
+
+#rz-slide5:checked~#rz-controls2 label:nth-last-child(1),
+#rz-slide6:checked~#rz-controls2 label:nth-last-child(5),
+#rz-slide7:checked~#rz-controls2 label:nth-last-child(4),
+#rz-slide8:checked~#rz-controls2 label:nth-last-child(3),
+#rz-slide9:checked~#rz-controls2 label:nth-last-child(2) {
+    background: url("https://content2.rozetka.com.ua/files/images/original/438678034.png") no-repeat;
+    background-size: contain;
+    float: left;
+    margin: 0 0 0 12px;
+    display: block;
+    background-color: rgba(255, 255, 255, 0.6);
+}
+
+#rz-bullets2 {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 3.5%;
+
+    z-index: 1;
+}
+
+.rz-slide-content2 {
+    width: 100%;
+    max-width: 640px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 16px;
+}
+
+.rz-slide-content2 .rz-h4 {
+    margin-bottom: 8px;
+    color: var(--rz-b-color);
+}
+
+/* slide 2 end */
+
+/* accordion start */
+
+#rz-accordion {
+    gap: 8px;
+    width: 100%;
+    padding: var(--rz-clamp16-24);
+    overflow: hidden;
+}
+
+#rz-accordion .rz-ard-item-input {
+    display: none;
+}
+
+#rz-accordion .rz-ard-item-trigger {
+    padding: 16px;
+    margin-bottom: 4px;
+
+    font-size: var(--rz-clamp16-24);
+    text-transform: uppercase;
+    color: var(--rz-b-color);
+
+    border: 2px solid var(--rz-w-color);
+    border-radius: 20px;
+
+    background: rgba(222, 238, 253, .8);
+    display: block;
+
+    cursor: pointer;
+    transition: ease-in-out 0.3s;
+    -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+    -webkit-tap-highlight-color: transparent;
+}
+
+#rz-accordion .rz-ard-item-content {
+    border-radius: 20px;
+    background: rgba(229, 230, 250, .8);
+
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease;
+}
+
+#rz-accordion .rz-ard-item-content .rz-ard-p {
+    padding: 16px;
+}
+
+#rz-accordion .rz-ard-item-input:checked~.rz-ard-item-trigger, #rz-accordion .rz-ard-item-trigger:hover {
+    background: rgba(229, 230, 250, .8);
+}
+
+#rz-accordion .rz-ard-item-input:checked + .rz-ard-item-trigger+ .rz-ard-item-content {
+    max-height: 1400px;
+}
+
+#rz-accordion input[type=checkbox]+label:before {
+    display: none;
+}
+
+/* accordion end */
+
+
+@media(max-width:767px){
+
+    .rz-wrap-video video {
+        width: 100%;
+        height: 300px;
+        object-fit: cover;
+    }
+
+    .rz-pos-text1, .rz-pos-text2 {
+        top: 45%;
+        left: 5%;
+        font-size: 12px;
+    }
+
+    .rz-button-decor:hover .rz-link-text {
+        display: none;
+    }
+
+    .rz-wrap-icon {
+        height: 40px;
+        width: 40px;
+    }
+
+    .rz-wrap-icon img {
+        width: 30px;
+        height: 30px;
+    }
+
+    .rz-popup-card {
+        flex-direction: column;
+    }
+
+    .rz-popup-text, .rz-popup-img {
+        width: 100%;
+    }
+
+    #rz-controls {
+        width: 50%;
+        bottom: 0;
+        right: 25%;
+    }
+
+    #rz-slides2 .rz-slide {
+        width: 20%;
+    }
+
+    #rz-slide5:checked~#rz-slides2 .rz-inner2 {
+        margin-left: 0;
+    }
+    
+    #rz-slide6:checked~#rz-slides2 .rz-inner2 {
+        margin-left: -75%;
+    }
+    
+    #rz-slide7:checked~#rz-slides2 .rz-inner2 {
+        margin-left: -150%;
+    }
+    
+    #rz-slide8:checked~#rz-slides2 .rz-inner2 {
+        margin-left: -225%;
+    }
+    
+    #rz-slide9:checked~#rz-slides2 .rz-inner2 {
+        margin-left: -300%;
+    }
+
+    .rz-slide-content2 .rz-h4 {
+       font-weight: 700;
+    }
+
+    #rz-accordion .rz-ard-item-trigger:hover {
+        background: rgba(222, 238, 253, .8);
+    }
+
+    .rz-bl-1 {
+        right: 65%;
+    }
+
+    .rz-bl-2 {
+        right: 25%;
+    }
+    
+    .rz-bl-3 {
+        right: 65%;
+    }
+
+    .rz-bl-4 {
+        right: 20%;
+    }
+    
+    .rz-bl-5 {
+        right: 65%;
+    }
+    
+    .rz-bl-6 {
+        top: 65%;
+        right: 40%;
+    }
+    
+    .rz-bl-8 {
+        right: 50%;
+    }
+}
